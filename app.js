@@ -1,8 +1,9 @@
-const http = require('http'),
-path = require('path'),
-express = require('express'),
-bodyParser = require('body-parser');
 const sqlite3 = require('sqlite3').verbose();
+const http = require('http'),
+	path = require('path'),
+	express = require('express'),
+	bodyParser = require('body-parser');
+
 const app = express();
 app.use(express.static('.'))
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -17,7 +18,6 @@ db.serialize(function () {
 app.get('/', function (req, res) {
     res.sendFile('index.html');
 });
-
 
 app.post('/login', function (req, res) {
 	var username = req.body.username;
@@ -42,4 +42,6 @@ app.post('/login', function (req, res) {
 
 });
 
-app.listen(3000);
+app.listen(3000, function () {
+    console.log("Express server listening on port 3000");
+    });

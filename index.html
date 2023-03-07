@@ -12,23 +12,27 @@
 </head>
 
 <body>
-    <div class="container">
-        <form action="/login" method="POST">
+    <form action="/login" method="POST">
+        <div class="container">
+            <label input>Username: </label>
             <input type="text" label="username" required />
-            <input type="text" label="password" required />
-        </form>
-    
-        <button type="submit">submit</button>
-    </div>
 
-    <script>
-        if(document.location.hash === '#unauthorized') {
-            document.write('<div class="unauthorized">Invalid Username or Password</div>');
-        } else if(document.location.hash === '#error') {
-            document.write('<div class="error">An error has occured</div>');
-        }
-      </script>
-    
+            <br>
+                
+            <label for="">Password: </label>
+            <input type="text" label="password" required />
+        
+        <button type="submit">submit</button>
+        </div>
+            
+        <script>
+            if(document.location.hash === '#unauthorized') {
+                document.write('<div class="unauthorized">Invalid Username or Password</div>');
+            } else if(document.location.hash === '#error') {
+                document.write('<div class="error">An error has occured</div>');
+            }
+        </script>
+    </form>
 </body>
 
 </html>
